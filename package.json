@@ -1,0 +1,22 @@
+{
+  "name": "suite-tooth",
+  "version": "0.0.1",
+  "description": "Unit tests that aren't magical",
+  "main": "suite-tooth.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "lodash": "^4.17.11",
+    "stringify-object": "^3.3.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.10.1",
+    "tape-promise": "^4.0.0"
+  }
+}
