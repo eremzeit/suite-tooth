@@ -4,20 +4,23 @@
   "description": "Unit tests that aren't magical",
   "main": "suite-tooth.js",
   "scripts": {
-    "test": "node suite-tooth.test.js"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.2.0"
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2"
   },
   "dependencies": {
     "chai": "^4.2.0",
     "common-tags": "^1.8.0",
     "lodash": "^4.17.11",
     "stringify-object": "^3.3.0",
+    "tap": "^14.10.7",
     "tap-spec": "^5.0.0",
     "tape": "^4.10.1",
-    "tape-promise": "^4.0.0"
+    "tape-promise": "^4.0.0",
+    "yaml": "^1.9.2"
   }
 }

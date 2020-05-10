@@ -8,6 +8,8 @@ const BEFORE_ALL = '__beforeAll'
 const AFTER_EACH = '__afterEach'
 const AFTER_ALL = '__afterAll'
 
+const yaml = require('yaml');
+
 const defaultStream = () => {
   let stream = through()
   stream.pipe(tapSpec()).pipe(process.stdout)
@@ -18,7 +20,6 @@ const _stream = defaultStream()
 
 class SuiteTap {
   constructor(stream) {
-    this.testCount = 0
     this.stream = stream || defaultStream()
   }
 
@@ -28,18 +29,23 @@ class SuiteTap {
     }
   }
 
-  start() {
+  start(testCount) {
     this._emit('TAP version 13')
+    this._emit(`1..${testCount}`)
   }
 
-  test(path, testNum, err) {
-    const desc = path.join(' | ')
+  test(testNum, description, err, meta) {
     const resStr = !err ? 'ok' : 'not ok'
-    this._emit(`${resStr} ${testNum} ${desc}`)
+
+    let str = `${resStr} ${testNum} ${desc}`;
+
+    if (meta) {
+      str = str + "\n" + yaml.stringify(meta);
+    }
+    this._emit(str);
   }
 
   finish() {
-    //this._emit(`1..${this.testCount}`)
     this.stream.end()
   }
 }
