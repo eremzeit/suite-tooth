@@ -4,7 +4,7 @@
   "description": "Unit tests that aren't magical",
   "main": "suite-tooth.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node suite-tooth.test.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "chai": "^4.2.0",
+    "common-tags": "^1.8.0",
     "lodash": "^4.17.11",
     "stringify-object": "^3.3.0",
     "tap-spec": "^5.0.0",

@@ -1,4 +1,3 @@
-
 const { suite, executeTestSuite, executeRootSuite, skip, only } = require('./suite-tooth')
 const { expect } = require('chai')
 const stripIndent = require('common-tags/lib/stripIndent')
@@ -408,4 +407,3 @@ function _delay(ms) {
     setTimeout(() => resolve(), ms)
   })
 }
-)
